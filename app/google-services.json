@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "160364135989",
+    "firebase_url": "https://najbolji-ucenik.firebaseio.com",
+    "project_id": "najbolji-ucenik",
+    "storage_bucket": "najbolji-ucenik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160364135989:android:2cb936943c766b9050137c",
+        "android_client_info": {
+          "package_name": "igor.kuridza.ferit.hr.najboljiucenik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160364135989-997bnvh90971asiv7mhej7cbhlpm5dvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNHetswog0Q026TLIHEp35GSlXOisrs1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160364135989-997bnvh90971asiv7mhej7cbhlpm5dvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

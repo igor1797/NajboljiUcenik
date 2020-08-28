@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/marginLarge"
+    android:paddingEnd="@dimen/marginLarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/newProverbQuestionHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/HeadingTextView"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/addingNewProverbHeaderText"/>
+
+    <EditText
+        android:id="@+id/newProverbQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/questionText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newProverbAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/answerText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newProverbLetters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lettersForAnswerText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/btnAddNewProverbQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_gravity="center"
+        android:text="@string/saveQuestionText"/>
+</LinearLayout>

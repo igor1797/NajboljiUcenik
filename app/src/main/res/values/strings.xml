@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Najbolji učenik</string>
+    <string name="najboljiText">Najbolji</string>
+    <string name="ucenikText">učenik</string>
+    <string name="korisnickoImeText">Korisničko ime:</string>
+    <string name="lozinkaText">Lozinka</string>
+    <string name="prijavaText">PRIJAVA</string>
+    <string name="errorForEmptyFiels">Polje ne može biti prazno!</string>
+    <string name="matematikaText">MATEMATIKA</string>
+    <string name="hrvatskiText">HRVATSKI</string>
+    <string name="geografijaText">GEOGRAFIJA</string>
+    <string name="povijestText">POVIJEST</string>
+    <string name="positiveAlertButtonText">DA</string>
+    <string name="negativeAlertButtonText">NE</string>
+    <string name="preskociPitanjeText">PRESKOČI PITANJE</string>
+    <string name="scoreText">Score:</string>
+    <string name="spremiScoreText">SPREMI SCORE</string>
+
+
+    <string name="deleteAlertDialogTitleText">Želite li stvarno obrisati pitanje?</string>
+    <string name="deleteAlertDialogPositiveButtonText">DA</string>
+    <string name="deleteAlertDialogNegativeButtonText">NE</string>
+    <string name="editMathQestionText">Edit matematičko pitanje</string>
+    <string name="newMathQestionHintText">Novo pitanje:</string>
+    <string name="newMathAnswerHintText">Novi odgovor:</string>
+    <string name="saveChangesButtonText">SPREMI PROMJENE</string>
+    <string name="addNewQuestionBtnText">DODAJ NOVO PITANJE</string>
+    <string name="fieldCantBeEmptyText">Polje ne može biti prazno!</string>
+    <string name="questionText">Pitanje:</string>
+    <string name="answerText">Odgovor:</string>
+    <string name="saveQuestionText">SPREMI PITANJE</string>
+    <string name="addingNewMathQuestionText">Dodavanje novog matematičkog pitanja</string>
+    <string name="addingNewTrueFalseQuestionText">Dodavanje novog točno-netočno pitanjs</string>
+    <string name="editTrueFalseQuestionHeaderText">Edit točno-netočno pitanja</string>
+    <string name="nicknameFieldCantBeEmptyText">Korisničko ime ne smije biti prazno!</string>
+    <string name="continueProverbText">NASTAVI POSLOVICU</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fieldMustContain11LettersText">Polje mora sadržavati točno 11 slova!</string>
+    <string name="addingNewProverbHeaderText">Dodavanje nove poslovice</string>
+    <string name="lettersForAnswerText">Slova za odgovor:</string>
+    <string name="editProverbTextHeading">Edit poslovice</string>
+
+</resources>
