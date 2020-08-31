@@ -20,7 +20,7 @@ class ProverbViewModel @ViewModelInject constructor(
         // Countdown time interval
         private const val ONE_SECOND = 1000L
         // Total time for the game
-        private const val COUNTDOWN_TIME = 20900L
+        private const val COUNTDOWN_TIME = 15900L
     }
 
     private val _answer = MutableLiveData<String>("")

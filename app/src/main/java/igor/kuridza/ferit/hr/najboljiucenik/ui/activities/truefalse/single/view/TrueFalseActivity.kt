@@ -1,4 +1,4 @@
-package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.view
+package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.single.view
 
 import android.content.Intent
 import androidx.databinding.DataBindingUtil
@@ -11,7 +11,9 @@ import igor.kuridza.ferit.hr.najboljiucenik.common.SCORE_KEY
 import igor.kuridza.ferit.hr.najboljiucenik.databinding.ActivityTrueFalseBinding
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.score.view.SubmitScoreActivity
-import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.viewmodel.TrueFalseViewModel
+import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.single.viewmodel.TrueFalseViewModel
+import igor.kuridza.ferit.hr.najboljiucenik.common.showAlertDialog
+
 
 @AndroidEntryPoint
 class TrueFalseActivity : BaseActivity() {
@@ -54,8 +56,20 @@ class TrueFalseActivity : BaseActivity() {
         intent.apply {
             putExtra(SCORE_KEY, trueFalseViewModel.score.value)
             putExtra(CATEGORY_TYPE_KEY, categoryType)
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         startActivity(intent)
+        finish()
+    }
+
+    private fun showAlertDialog(){
+        showAlertDialog(this, getString(R.string.progressWillNotBeSavedText)){ positiveButtonListener() }
+    }
+
+    private fun positiveButtonListener(){
+        finish()
+    }
+
+    override fun onBackPressed() {
+        showAlertDialog()
     }
 }

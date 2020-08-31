@@ -8,14 +8,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.viewmodel.TrueFalseViewModel"
+            type="igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.single.viewmodel.TrueFalseViewModel"
             />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activities.truefalse.view.TrueFalseActivity"
+        tools:context=".ui.activities.truefalse.single.view.TrueFalseActivity"
         >
 
         <TextView

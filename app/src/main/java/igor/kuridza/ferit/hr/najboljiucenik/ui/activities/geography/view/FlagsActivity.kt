@@ -25,6 +25,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.geography.viewmodel.FlagsViewModel
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.score.view.SubmitScoreActivity
 import kotlinx.android.synthetic.main.activity_flags.*
+import igor.kuridza.ferit.hr.najboljiucenik.common.showAlertDialog
 
 @AndroidEntryPoint
 class FlagsActivity : BaseActivity(){
@@ -80,9 +81,9 @@ class FlagsActivity : BaseActivity(){
         intent.apply {
             putExtra(SCORE_KEY, flagsViewModel.score.value)
             putExtra(CATEGORY_TYPE_KEY, GEOGRAPHY_FLAGS)
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         startActivity(intent)
+        finish()
     }
 
     private fun observeAnswer(){
@@ -196,6 +197,21 @@ class FlagsActivity : BaseActivity(){
 
     private fun onButtonClick(button: Button, position: Int){
         flagsViewModel.newLetter(button.text.toString(), position)
+    }
+
+    private fun showAlertDialog(){
+        showAlertDialog(
+            this,
+            getString(R.string.progressWillNotBeSavedText)
+        ) { positiveButtonListener() }
+    }
+
+    private fun positiveButtonListener(){
+        finish()
+    }
+
+    override fun onBackPressed() {
+        showAlertDialog()
     }
 
 }

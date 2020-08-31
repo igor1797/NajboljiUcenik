@@ -1,6 +1,5 @@
 package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.score.view
 
-import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
 import igor.kuridza.ferit.hr.najboljiucenik.R
@@ -8,9 +7,9 @@ import igor.kuridza.ferit.hr.najboljiucenik.common.CATEGORY_TYPE_KEY
 import igor.kuridza.ferit.hr.najboljiucenik.common.SCORE_KEY
 import igor.kuridza.ferit.hr.najboljiucenik.common.onClick
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
-import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.main.view.MainActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.score.viewmodel.SubmitScoreViewModel
 import kotlinx.android.synthetic.main.activity_submit_score.*
+import igor.kuridza.ferit.hr.najboljiucenik.common.showAlertDialog
 
 @AndroidEntryPoint
 class SubmitScoreActivity : BaseActivity() {
@@ -31,7 +30,6 @@ class SubmitScoreActivity : BaseActivity() {
 
         btnSaveScore.onClick {
             saveScore()
-            startMainActivity()
         }
     }
 
@@ -43,16 +41,18 @@ class SubmitScoreActivity : BaseActivity() {
             return
         }
         submitScoreViewModel.submitScore(mNickname, categoryType, mScore)
+        finish()
     }
 
-    private fun startMainActivity(){
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+    private fun showAlertDialog() {
+        showAlertDialog(this, getString(R.string.scoreWillNotBeSavedText)){ positiveButtonListener() }
+    }
+
+    private fun positiveButtonListener(){
+        finish()
     }
 
     override fun onBackPressed() {
-        //implementirati dijalog želite li stvarno izaći
-        startMainActivity()
-        super.onBackPressed()
+       showAlertDialog()
     }
 }

@@ -3,6 +3,7 @@ package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.main.view
 
 import android.app.ActivityOptions
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint

@@ -18,8 +18,6 @@
 
 
     <string name="deleteAlertDialogTitleText">Želite li stvarno obrisati pitanje?</string>
-    <string name="deleteAlertDialogPositiveButtonText">DA</string>
-    <string name="deleteAlertDialogNegativeButtonText">NE</string>
     <string name="editMathQestionText">Edit matematičko pitanje</string>
     <string name="newMathQestionHintText">Novo pitanje:</string>
     <string name="newMathAnswerHintText">Novi odgovor:</string>
@@ -40,5 +38,14 @@
     <string name="addingNewProverbHeaderText">Dodavanje nove poslovice</string>
     <string name="lettersForAnswerText">Slova za odgovor:</string>
     <string name="editProverbTextHeading">Edit poslovice</string>
+    <string name="player1NicknameText">Igrač 1 nadimak:</string>
+    <string name="player2NicknameText">Igrač 2 nadimak:</string>
+    <string name="flagsText">KARTE DRŽAVA</string>
+    <string name="trueFalseText">TOČNO/NETOČNO</string>
+    <string name="player1ScoreText">Igrač 1 score:</string>
+    <string name="player2ScoreText">Igrač 2 score:</string>
+    <string name="exitText">IZAĐI</string>
+    <string name="scoreWillNotBeSavedText">Napustiti zaslon? Rezultat neće biti spremljen!</string>
+    <string name="progressWillNotBeSavedText">"Napustiti zaslon? Napredak neće biti spremljen!"</string>
 
 </resources>

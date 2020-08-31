@@ -27,6 +27,8 @@ class TrueFalseQuestionAdapter (
         holder.bindItem(model)
     }
 
+    override fun getItemCount(): Int = snapshots.size
+
     inner class TrueFalseQuestionHolder(
         containerView: View,
         private val onIconDeleteClicked: (DocumentSnapshot) -> Unit,

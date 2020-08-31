@@ -1,4 +1,4 @@
-package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.viewmodel
+package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.single.viewmodel
 
 import android.os.CountDownTimer
 import androidx.hilt.lifecycle.ViewModelInject
@@ -19,7 +19,7 @@ class TrueFalseViewModel @ViewModelInject constructor(
         // Countdown time interval
         private const val ONE_SECOND = 1000L
         // Total time for the game
-        private const val COUNTDOWN_TIME = 10500L
+        private const val COUNTDOWN_TIME = 15900L
     }
 
     private val _questions = MutableLiveData<List<QuestionTrueFalse>>()

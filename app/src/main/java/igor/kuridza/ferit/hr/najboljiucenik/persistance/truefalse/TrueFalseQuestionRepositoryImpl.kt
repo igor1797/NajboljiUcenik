@@ -12,6 +12,10 @@ class TrueFalseQuestionRepositoryImpl @Inject constructor(
         return trueFalseQuestionDao.get100TrueFalseQuestionsForCategory(categoryName)
     }
 
+    override fun get10TrueFalseQuestionsForCategory(categoryName: String): List<QuestionTrueFalse> {
+        return trueFalseQuestionDao.get10TrueFalseQuestionsForCategory(categoryName)
+    }
+
     override suspend fun clearAllQuestionTrueFalse() {
         trueFalseQuestionDao.clearAllQuestionTrueFalse()
     }

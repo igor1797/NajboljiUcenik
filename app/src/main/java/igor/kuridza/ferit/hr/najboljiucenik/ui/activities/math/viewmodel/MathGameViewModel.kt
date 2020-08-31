@@ -106,6 +106,10 @@ class MathGameViewModel @ViewModelInject constructor(
         timer.cancel()
     }
 
+    fun startTimer(){
+        timer.start()
+    }
+
     fun eraseNumber(){
         if(_answer.value?.length?.equals(0) == false){
             _answer.value = (_answer.value)?.substring(0, (_answer.value?.length?.minus(1))!!)

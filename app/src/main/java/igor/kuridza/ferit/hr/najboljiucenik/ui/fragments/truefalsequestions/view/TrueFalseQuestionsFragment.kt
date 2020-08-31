@@ -1,15 +1,14 @@
 package igor.kuridza.ferit.hr.najboljiucenik.ui.fragments.truefalsequestions.view
 
+import android.view.View
+import android.widget.AdapterView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
 import dagger.hilt.android.AndroidEntryPoint
 import igor.kuridza.ferit.hr.najboljiucenik.R
-import igor.kuridza.ferit.hr.najboljiucenik.common.EDIT_TRUE_FALSE_QUESTION_TAG
-import igor.kuridza.ferit.hr.najboljiucenik.common.NEW_TRUE_FALSE_QUESTION_TAG
-import igor.kuridza.ferit.hr.najboljiucenik.common.onClick
-import igor.kuridza.ferit.hr.najboljiucenik.common.showDeleteAlertDialog
+import igor.kuridza.ferit.hr.najboljiucenik.common.*
 import igor.kuridza.ferit.hr.najboljiucenik.model.QuestionTrueFalse
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragmentdialogs.truefalsequestions.editquestion.view.EditTrueFalseQuestionFragmentDialog
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragmentdialogs.truefalsequestions.addnewquestion.view.AddNewTrueFalseQuestionFragmentDialog
@@ -19,7 +18,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.ui.recyclerview.adapters.TrueFalseQu
 import kotlinx.android.synthetic.main.fragment_true_false_questions.*
 
 @AndroidEntryPoint
-class TrueFalseQuestionsFragment : BaseFragment() {
+class TrueFalseQuestionsFragment : BaseFragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var trueFalseQuestionAdapter: TrueFalseQuestionAdapter
 
@@ -30,11 +29,26 @@ class TrueFalseQuestionsFragment : BaseFragment() {
     override fun getLayoutResourceId(): Int = R.layout.fragment_true_false_questions
 
     override fun setUpUi() {
-        setUpRecycler()
+        setSpinnerOptions()
+        setUpRecycler(GEOGRAPHY_TRUE_FALSE)
         btnAddNewTrueFalseQuestion.onClick {
             showAddNewTrueFalseQuestionDialog()
         }
     }
+
+    private fun setSpinnerOptions(){
+        trueFalseCategoryTypeSpinner.setOptions(context!!, GEOGRAPHY_TRUE_FALSE, CROATIAN_TRUE_FALSE)
+        trueFalseCategoryTypeSpinner.onItemSelectedListener = this
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        when(position){
+            0-> setUpRecycler(GEOGRAPHY_TRUE_FALSE)
+            else -> setUpRecycler(CROATIAN_TRUE_FALSE)
+        }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {}
 
     private fun showAddNewTrueFalseQuestionDialog(){
         val dialog = AddNewTrueFalseQuestionFragmentDialog.newInstance()
@@ -48,8 +62,8 @@ class TrueFalseQuestionsFragment : BaseFragment() {
 
     }
 
-    private fun setUpRecycler(){
-        val query = trueFalseQuestionsViewModel.getFirebaseQuery()
+    private fun setUpRecycler(categoryType: String){
+        val query = trueFalseQuestionsViewModel.getFirebaseQuery().whereEqualTo("categoryGame", categoryType)
 
         val options = FirestoreRecyclerOptions.Builder<QuestionTrueFalse>()
             .setQuery(query, QuestionTrueFalse::class.java)

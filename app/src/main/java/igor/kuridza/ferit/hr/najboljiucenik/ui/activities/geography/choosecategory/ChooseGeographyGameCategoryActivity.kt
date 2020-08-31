@@ -6,7 +6,8 @@ import igor.kuridza.ferit.hr.najboljiucenik.common.*
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.geography.view.FlagsActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.score.ScoreBoardActivity
-import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.view.TrueFalseActivity
+import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.dual.view.DualActivity
+import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.truefalse.single.view.TrueFalseActivity
 import kotlinx.android.synthetic.main.activity_choose_geography_game_category.*
 
 class ChooseGeographyGameCategoryActivity : BaseActivity() {
@@ -14,16 +15,20 @@ class ChooseGeographyGameCategoryActivity : BaseActivity() {
     override fun getLayoutResourceId() = R.layout.activity_choose_geography_game_category
 
     override fun setUpUi() {
-        flagsCategory.onClick {
+        flagsCategorySingle.onClick {
             startFlagActivity()
         }
 
-        trueFalseCategory.onClick {
+        trueFalseSingle.onClick {
             startTrueFalseActivity()
         }
 
         scoreIcon.onClick {
             startScoreBoardActivity()
+        }
+
+        trueFalseDual.onClick {
+            startDualModeActivity()
         }
     }
 
@@ -41,6 +46,12 @@ class ChooseGeographyGameCategoryActivity : BaseActivity() {
     private fun startScoreBoardActivity(){
         val intent = Intent(this, ScoreBoardActivity::class.java)
         intent.putExtra(SUBJECT_KEY, GEOGRAPHY_SUBJECT)
+        startActivity(intent)
+    }
+
+    private fun startDualModeActivity(){
+        val intent = Intent(this, DualActivity::class.java)
+        intent.putExtra(CATEGORY_TYPE_KEY, GEOGRAPHY_TRUE_FALSE)
         startActivity(intent)
     }
 }

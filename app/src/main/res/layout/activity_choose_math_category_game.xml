@@ -43,30 +43,24 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/ic_multiplication_division"
-        app:layout_constraintTop_toBottomOf="@id/upEye"
+        app:layout_constraintTop_toTopOf="@id/upEye"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/scoreIcon"
         app:layout_constraintStart_toEndOf="@id/additionSubtractionIcon"
         >
     </ImageView>
 
-    <TextView
+    <ImageView
         android:id="@+id/scoreIcon"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:text="SCORE"
-        android:textColor="@color/colorWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="50sp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/ic_backgroundcategory"
+        android:background="@drawable/ic_score_trophy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/downEye"
-        app:layout_constraintBottom_toTopOf="@id/downEye"
         app:layout_constraintTop_toBottomOf="@id/multiplicationDivisionIcon"
         >
-    </TextView>
+    </ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

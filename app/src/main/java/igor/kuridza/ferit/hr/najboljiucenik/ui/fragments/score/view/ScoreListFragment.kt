@@ -7,7 +7,9 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import dagger.hilt.android.AndroidEntryPoint
 import igor.kuridza.ferit.hr.najboljiucenik.R
 import igor.kuridza.ferit.hr.najboljiucenik.common.CATEGORY_TYPE_KEY
+import igor.kuridza.ferit.hr.najboljiucenik.common.gone
 import igor.kuridza.ferit.hr.najboljiucenik.common.setDivider
+import igor.kuridza.ferit.hr.najboljiucenik.common.visible
 import igor.kuridza.ferit.hr.najboljiucenik.model.PlayerScore
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragments.base.BaseFragment
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragments.score.viewmodel.ScoreListViewModel

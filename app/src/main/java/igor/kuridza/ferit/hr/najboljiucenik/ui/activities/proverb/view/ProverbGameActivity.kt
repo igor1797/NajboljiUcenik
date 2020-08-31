@@ -78,9 +78,9 @@ class ProverbGameActivity : BaseActivity() {
         intent.apply {
             putExtra(SCORE_KEY, proverbViewModel.score.value)
             putExtra(CATEGORY_TYPE_KEY, CROATIAN_PROVERB)
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         startActivity(intent)
+        finish()
     }
 
     private fun observeAnswer(){
@@ -173,5 +173,17 @@ class ProverbGameActivity : BaseActivity() {
 
     private fun onButtonClick(button: Button, position: Int){
         proverbViewModel.newLetter(button.text.toString(), position)
+    }
+
+    private fun showAlertDialog(){
+        showAlertDialog(this, getString(R.string.progressWillNotBeSavedText)){ positiveButtonListener() }
+    }
+
+    private fun positiveButtonListener(){
+        finish()
+    }
+
+    override fun onBackPressed() {
+        showAlertDialog()
     }
 }

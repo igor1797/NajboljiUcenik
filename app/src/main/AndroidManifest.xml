@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.proverb.view.ProverbGameActivity"></activity>
+        <activity android:name=".ui.activities.score.dual.DualScoreActivity"></activity>
+        <activity android:name=".ui.activities.truefalse.dual.view.DualActivity" />
+        <activity android:name=".ui.activities.proverb.view.ProverbGameActivity" />
         <activity android:name=".ui.activities.score.ScoreBoardActivity" />
         <activity android:name=".ui.activities.math.view.MathGameActivity" />
         <activity
@@ -22,7 +24,7 @@
             android:name=".ui.activities.geography.choosecategory.ChooseGeographyGameCategoryActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activities.truefalse.view.TrueFalseActivity"
+            android:name=".ui.activities.truefalse.single.view.TrueFalseActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activities.croatian.ChooseCroatianCategoryGameActivity"

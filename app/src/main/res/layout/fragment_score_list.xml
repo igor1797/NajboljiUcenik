@@ -11,4 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <TextView
+        android:id="@+id/noScores"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Trenutno nema zabilježenih rezultata.">
+    </TextView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

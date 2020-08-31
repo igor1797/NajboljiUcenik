@@ -3,12 +3,15 @@ package igor.kuridza.ferit.hr.najboljiucenik.ui.recyclerview.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import igor.kuridza.ferit.hr.najboljiucenik.R
 import igor.kuridza.ferit.hr.najboljiucenik.common.connect
+import igor.kuridza.ferit.hr.najboljiucenik.common.visible
 import igor.kuridza.ferit.hr.najboljiucenik.model.PlayerScore
 import igor.kuridza.ferit.hr.najboljiucenik.ui.recyclerview.base.BaseViewHolder
+import kotlinx.android.synthetic.main.fragment_score_list.*
 import kotlinx.android.synthetic.main.score_item.*
 
 class ScoreAdapter(

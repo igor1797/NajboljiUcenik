@@ -12,6 +12,9 @@ interface TrueFalseQuestionDao {
     @Query("Select* FROM QuestionTrueFalse WHERE categoryGame == :categoryName ORDER BY RANDOM() LIMIT 100")
     fun get100TrueFalseQuestionsForCategory(categoryName: String): List<QuestionTrueFalse>
 
+    @Query("Select* FROM QuestionTrueFalse WHERE categoryGame == :categoryName ORDER BY RANDOM() LIMIT 10")
+    fun get10TrueFalseQuestionsForCategory(categoryName: String): List<QuestionTrueFalse>
+
     @Query("Delete FROM QuestionTrueFalse")
     suspend fun clearAllQuestionTrueFalse()
 

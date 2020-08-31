@@ -17,6 +17,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.math.viewmodel.MathGameViewModel
 import kotlinx.android.synthetic.main.activity_flags.answer
 import kotlinx.android.synthetic.main.activity_math_game.*
+import igor.kuridza.ferit.hr.najboljiucenik.common.showAlertDialog
 
 @AndroidEntryPoint
 class MathGameActivity : BaseActivity() {
@@ -105,13 +106,25 @@ class MathGameActivity : BaseActivity() {
         }
     }
 
+    private fun showAlertDialog(){
+        showAlertDialog(this, getString(R.string.progressWillNotBeSavedText)){ positiveButtonListener() }
+    }
+
+    private fun positiveButtonListener(){
+        finish()
+    }
+
     private fun startScoreActivity(){
         val intent = Intent(this, SubmitScoreActivity::class.java)
         intent.apply {
             putExtra(SCORE_KEY, mathGameViewModel.score.value)
             putExtra(CATEGORY_TYPE_KEY, categoryType)
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         startActivity(intent)
+        finish()
+    }
+
+    override fun onBackPressed() {
+        showAlertDialog()
     }
 }
