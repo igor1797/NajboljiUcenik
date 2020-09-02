@@ -43,13 +43,13 @@ fun FragmentActivity.showFragment(containerId: Int, fragment: Fragment, shouldAd
 
 fun Spinner.setOptions(context: Context, option1: String, option2: String){
     val list = arrayListOf(option1, option2)
-    val spinnerAdapter = ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, list)
+    val spinnerAdapter = ArrayAdapter<String>(context, R.layout.spinner_item, list)
     this.adapter = spinnerAdapter
 }
 
 fun Spinner.setTrueFalseOptions(context: Context, option1: Boolean, option2: Boolean){
     val list = arrayListOf(option1, option2)
-    val spinnerAdapter = ArrayAdapter<Boolean>(context, R.layout.support_simple_spinner_dropdown_item, list)
+    val spinnerAdapter = ArrayAdapter<Boolean>(context, R.layout.spinner_item, list)
     this.adapter = spinnerAdapter
 }
 

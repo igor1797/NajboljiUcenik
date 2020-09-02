@@ -21,7 +21,9 @@ import kotlinx.android.synthetic.main.fragment_score_list.*
 class ScoreListFragment : BaseFragment(){
 
     private var categoryType: String? = null
-    private lateinit var scoreAdapter: ScoreAdapter
+    private val scoreAdapter: ScoreAdapter by lazy {
+       getScoreAdapterInstance()
+    }
 
     private val scoreListViewModel: ScoreListViewModel by lazy {
         ViewModelProvider(this).get(ScoreListViewModel::class.java)
@@ -42,22 +44,43 @@ class ScoreListFragment : BaseFragment(){
         setUpRecycler()
     }
 
-    private fun setUpRecycler(){
+    private fun getScoreAdapterInstance(): ScoreAdapter{
         val query = scoreListViewModel.getScoreQueryForCategory(categoryType!!)
 
         val options = FirestoreRecyclerOptions.Builder<PlayerScore>()
             .setQuery(query, PlayerScore::class.java)
             .build()
 
-        scoreAdapter = ScoreAdapter(options)
+        return ScoreAdapter(options){itemCount->
+            onDataChanged(itemCount)
+        }
+    }
 
+    private fun onDataChanged(itemCount: Int) {
+        if (itemCount == 0) {
+            noScoreData.visible()
+        } else {
+            noScoreData.gone()
+        }
+    }
+
+    private fun setUpRecycler(){
         scoreRecyclerView.apply {
             adapter = scoreAdapter
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             setDivider()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
         scoreAdapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        scoreAdapter.stopListening()
     }
 
     companion object {

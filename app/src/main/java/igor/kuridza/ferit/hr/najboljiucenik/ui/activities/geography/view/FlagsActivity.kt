@@ -58,7 +58,7 @@ class FlagsActivity : BaseActivity(){
                 .with(flag.context)
                 .withListener(object: GlideToVectorYouListener{
                     override fun onLoadFailed() {
-                        Log.d("aaaaa", "fail load image ${flagQuestion.answer}")
+                        Log.d("TAG", "fail load image ${flagQuestion.answer}")
                     }
                     override fun onResourceReady() {
                         animateChangingQuestion(1F)

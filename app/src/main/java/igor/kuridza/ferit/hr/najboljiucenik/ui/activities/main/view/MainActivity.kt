@@ -3,7 +3,6 @@ package igor.kuridza.ferit.hr.najboljiucenik.ui.activities.main.view
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,9 +13,6 @@ import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.base.BaseActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.choosesubject.ChooseSubjectActivity
 import igor.kuridza.ferit.hr.najboljiucenik.ui.activities.main.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
 import android.util.Pair as UtilPair
 
 @AndroidEntryPoint
@@ -29,9 +25,7 @@ class MainActivity : BaseActivity(){
     override fun getLayoutResourceId() = R.layout.activity_main
 
     override fun setUpUi() {
-        CoroutineScope(IO).launch {
-            mainViewModel.getQuestions()
-        }
+        mainViewModel.getQuestions()
         setAdminIconOnClickListener()
         setPlayIconOnClickListener()
         animatePlayButton()

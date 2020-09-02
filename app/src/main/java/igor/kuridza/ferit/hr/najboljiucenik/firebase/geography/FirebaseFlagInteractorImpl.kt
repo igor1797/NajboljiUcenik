@@ -1,7 +1,5 @@
 package igor.kuridza.ferit.hr.najboljiucenik.firebase.geography
 
-import android.util.Log
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import igor.kuridza.ferit.hr.najboljiucenik.common.FLAGS_DOCUMENT_PATH
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.base.BaseFirebaseInteractor

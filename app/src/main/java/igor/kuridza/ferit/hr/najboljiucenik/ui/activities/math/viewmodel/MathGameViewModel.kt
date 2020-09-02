@@ -5,6 +5,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import igor.kuridza.ferit.hr.najboljiucenik.common.connect
 import igor.kuridza.ferit.hr.najboljiucenik.model.MathQuestion
 import igor.kuridza.ferit.hr.najboljiucenik.persistance.math.MathQuestionRepository
 
@@ -62,17 +63,16 @@ class MathGameViewModel @ViewModelInject constructor(
 
     fun setFirstQuestion(){
         _currentQuestion.value = _questions.value?.first()
-        timer.start()
+        startTimer()
     }
 
     fun newNumber(number: Int){
-        val stringBuilder = StringBuilder()
-        stringBuilder.append(answer.value)
-        stringBuilder.append(number)
-        val answer = stringBuilder.toString()
-        //da se ne moze dodavati stalno brojevi, vec se ogranici na troznamenkaste
-        if(answer.length<4) {
-            _answer.value = stringBuilder.toString()
+        val answer: String? = answer.value?.connect(number.toString())
+        //da se ne mogu dodavati stalno brojevi, vec se ogranici na troznamenkaste
+        if(answer!=null) {
+            if (answer.length < 4) {
+                _answer.value = answer
+            }
         }
         checkAnswer()
     }
@@ -84,7 +84,7 @@ class MathGameViewModel @ViewModelInject constructor(
     }
 
     private fun correctAnswer(){
-        _score.value = (_score.value)!!.plus(countDown.value!!)
+        _score.value = (score.value)!!.plus(countDown.value!!)
     }
 
     private fun nextQuestion(){
@@ -95,7 +95,7 @@ class MathGameViewModel @ViewModelInject constructor(
     }
 
     fun changeQuestion(){
-        if(_currentNumberOfQuestion.value?.equals(_questions.value?.size?.minus(1))!!){
+        if(_currentNumberOfQuestion.value?.equals(_questions.value?.size?.minus(1)) == true){
             _gameOver.value = true
         }else{
             nextQuestion()
@@ -106,13 +106,13 @@ class MathGameViewModel @ViewModelInject constructor(
         timer.cancel()
     }
 
-    fun startTimer(){
+    private fun startTimer(){
         timer.start()
     }
 
     fun eraseNumber(){
-        if(_answer.value?.length?.equals(0) == false){
-            _answer.value = (_answer.value)?.substring(0, (_answer.value?.length?.minus(1))!!)
+        if(answer.value?.length?.equals(0) == false){
+            _answer.value = (answer.value)?.substring(0, (_answer.value?.length?.minus(1))!!)
         }
     }
 

@@ -1,7 +1,17 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="horizontal_margin">16dp</dimen>
-    <dimen name="margin">16dp</dimen>
-    <dimen name="marginLarge">12dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="marginLarge">16dp</dimen>
     <dimen name="textSizeHeading">26sp</dimen>
+
+    <dimen name="marginStartLarge">24dp</dimen>
+    <dimen name="marginEndLarge">24dp</dimen>
+    <dimen name="marginStart">16dp</dimen>
+    <dimen name="marginEnd">16dp</dimen>
+    <dimen name="marginTop">16dp</dimen>
+    <dimen name="marginTopLarge">24dp</dimen>
+    <dimen name="textSizeLarge">24sp</dimen>
+    <dimen name="textSizeQuestion">40sp</dimen>
+    <dimen name="paddingLarge">24dp</dimen>
 </resources>

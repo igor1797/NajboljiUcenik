@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.fragment_score_list.*
 import kotlinx.android.synthetic.main.score_item.*
 
 class ScoreAdapter(
-    options: FirestoreRecyclerOptions<PlayerScore>
+    options: FirestoreRecyclerOptions<PlayerScore>,
+    private val onDataChanged: (Int) -> Unit
 ): FirestoreRecyclerAdapter<PlayerScore, ScoreAdapter.ScoreHolder>(options){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScoreHolder {
@@ -25,6 +26,12 @@ class ScoreAdapter(
 
     override fun onBindViewHolder(holder: ScoreHolder, position: Int, model: PlayerScore) {
         holder.bindItem(model)
+    }
+
+    override fun onDataChanged() {
+        super.onDataChanged()
+        onDataChanged(itemCount)
+        notifyDataSetChanged()
     }
 
     inner class ScoreHolder(

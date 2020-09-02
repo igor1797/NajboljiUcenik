@@ -46,7 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginLarge"
         android:layout_marginBottom="@dimen/marginLarge"
+        android:padding="8dp"
         android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
         android:enabled="false"
         android:text="@string/saveQuestionText"/>
 </LinearLayout>

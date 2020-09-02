@@ -10,8 +10,30 @@
     </style>
 
     <style name="HeadingTextView" parent="TextAppearance.AppCompat">
-        <item name="android:layout_margin">@dimen/marginLarge</item>
         <item name="android:textSize">@dimen/textSizeHeading</item>
+    </style>
+
+    <style name="LargeText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="QuestionLargeText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textSizeQuestion</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="LargeFragmentDialogButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/textSizeLarge</item>
+    </style>
+
+    <style name="LargeTabText" parent="TextAppearance.Design.Tab">
+        <item name="tabTextColor">@color/colorBlack</item>
+        <item name="android:textSize">40sp</item>
     </style>
 
     <style name="FragmentDialogTheme" parent="Theme.AppCompat.Light.Dialog">

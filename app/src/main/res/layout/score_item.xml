@@ -25,8 +25,7 @@
         android:layout_marginStart="16dp"
         android:textColor="@color/colorBlack"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="PETAR">
+        android:textStyle="bold">
     </TextView>
 
     <TextView
@@ -38,8 +37,7 @@
         app:layout_constraintStart_toEndOf="@id/imagePerson"
         app:layout_constraintBottom_toBottomOf="parent"
         android:textColor="@color/colorBlack"
-        android:textSize="18sp"
-        android:text="REZULTAT: 90">
+        android:textSize="18sp">
     </TextView>
 
     <TextView
@@ -50,8 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/nickname"
         android:textColor="@color/colorBlack"
-        android:textSize="20sp"
-        android:text="1. Mjesto">
+        android:textSize="20sp">
     </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

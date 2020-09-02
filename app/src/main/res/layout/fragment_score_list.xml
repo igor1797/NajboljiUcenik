@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.fragments.score.view.ScoreListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,11 +13,12 @@
         android:layout_height="match_parent"/>
 
     <TextView
-        android:id="@+id/noScores"
+        android:id="@+id/noScoreData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Trenutno nema zabilježenih rezultata.">
+        android:text="@string/noScoreDataText"
+        android:textSize="30sp"
+        android:textStyle="bold">
     </TextView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

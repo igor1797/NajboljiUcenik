@@ -1,11 +1,13 @@
 package igor.kuridza.ferit.hr.najboljiucenik.di
 
 import android.content.Context
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
+import igor.kuridza.ferit.hr.najboljiucenik.common.DB_NAME
 import igor.kuridza.ferit.hr.najboljiucenik.database.*
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.geography.FirebaseFlagInteractor
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.geography.FirebaseFlagInteractorImpl
@@ -33,7 +35,9 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext appContext: Context) = DaoProvider.invoke(appContext)
+    fun provideDatabase(@ApplicationContext appContext: Context) = Room.databaseBuilder(
+        appContext, DaoProvider::class.java, DB_NAME
+    ).allowMainThreadQueries().build()
 
     @Singleton
     @Provides

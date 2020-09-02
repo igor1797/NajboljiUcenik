@@ -13,11 +13,11 @@ class ChooseMathCategoryGameActivity : BaseActivity() {
     override fun getLayoutResourceId() = R.layout.activity_choose_math_category_game
 
     override fun setUpUi() {
-        additionSubtractionIcon.onClick {
+        additionSubtractionCategorySingle.onClick {
             startMathGame(ADDITION_SUBTRACTION)
         }
 
-        multiplicationDivisionIcon.onClick {
+        multiplicationDivisionCategorySingle.onClick {
             startMathGame(DIVISION_MULTIPLICATION)
         }
 

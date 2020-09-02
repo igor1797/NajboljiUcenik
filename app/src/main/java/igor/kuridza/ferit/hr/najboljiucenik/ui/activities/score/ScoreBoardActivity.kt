@@ -32,20 +32,20 @@ class ScoreBoardActivity : BaseActivity() {
         val categoryTypes = arrayListOf<String>()
         when(subjectName){
             MATH_SUBJECT -> {
-                tabTitles.add("Zbrajanje/Oduzimanje")
-                tabTitles.add("Množenje/Djeljenje")
+                tabTitles.add("Zbra/Oduz")
+                tabTitles.add("Mno/Djelj")
                 categoryTypes.add(ADDITION_SUBTRACTION)
                 categoryTypes.add(DIVISION_MULTIPLICATION)
             }
             CROATIAN_SUBJECT ->{
                 tabTitles.add("Poslovice")
-                tabTitles.add("Točno/Netočno")
+                tabTitles.add("Toč/Net")
                 categoryTypes.add(CROATIAN_PROVERB)
                 categoryTypes.add(CROATIAN_TRUE_FALSE)
             }
             GEOGRAPHY_SUBJECT->{
                 tabTitles.add("Zastave")
-                tabTitles.add("Točno/Netočno")
+                tabTitles.add("Toč/Net")
                 categoryTypes.add(GEOGRAPHY_FLAGS)
                 categoryTypes.add(GEOGRAPHY_TRUE_FALSE)
             }

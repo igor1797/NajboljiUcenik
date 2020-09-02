@@ -40,12 +40,18 @@
     <string name="editProverbTextHeading">Edit poslovice</string>
     <string name="player1NicknameText">Igrač 1 nadimak:</string>
     <string name="player2NicknameText">Igrač 2 nadimak:</string>
-    <string name="flagsText">KARTE DRŽAVA</string>
+    <string name="flagsText">ZASTAVE DRŽAVA</string>
     <string name="trueFalseText">TOČNO/NETOČNO</string>
     <string name="player1ScoreText">Igrač 1 score:</string>
     <string name="player2ScoreText">Igrač 2 score:</string>
     <string name="exitText">IZAĐI</string>
     <string name="scoreWillNotBeSavedText">Napustiti zaslon? Rezultat neće biti spremljen!</string>
     <string name="progressWillNotBeSavedText">"Napustiti zaslon? Napredak neće biti spremljen!"</string>
+    <string name="additionSubtractionText">ZBRAJANJE/ODUZIMANJE</string>
+    <string name="multiplicationDivisionText">MNOŽENJE/DIJELJENJE</string>
+    <string name="noScoreDataText">Trenutno nema zabilježenih rezultata!</string>
+    <string name="mathItemText">MAT</string>
+    <string name="trueFalseItemText">DA-NE</string>
+    <string name="proverbItemText">POSLOVICE</string>
 
 </resources>
