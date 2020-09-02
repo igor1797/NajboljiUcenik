@@ -28,7 +28,7 @@
     <string name="answerText">Odgovor:</string>
     <string name="saveQuestionText">SPREMI PITANJE</string>
     <string name="addingNewMathQuestionText">Dodavanje novog matematičkog pitanja</string>
-    <string name="addingNewTrueFalseQuestionText">Dodavanje novog točno-netočno pitanjs</string>
+    <string name="addingNewTrueFalseQuestionText">Dodavanje novog točno-netočno pitanja</string>
     <string name="editTrueFalseQuestionHeaderText">Edit točno-netočno pitanja</string>
     <string name="nicknameFieldCantBeEmptyText">Korisničko ime ne smije biti prazno!</string>
     <string name="continueProverbText">NASTAVI POSLOVICU</string>
@@ -53,5 +53,6 @@
     <string name="mathItemText">MAT</string>
     <string name="trueFalseItemText">DA-NE</string>
     <string name="proverbItemText">POSLOVICE</string>
+    <string name="wrongAdminInputsInfo">Netočna lozinka ili korisničko ime!</string>
 
 </resources>

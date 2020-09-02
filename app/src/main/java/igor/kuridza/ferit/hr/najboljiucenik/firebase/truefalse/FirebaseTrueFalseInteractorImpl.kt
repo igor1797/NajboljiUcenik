@@ -27,15 +27,15 @@ class FirebaseTrueFalseInteractorImpl @Inject constructor(
         }
     }
 
-    override fun deleteTrueFalseQuestion(documentSnapshot: DocumentSnapshot) {
+    override suspend fun deleteTrueFalseQuestion(documentSnapshot: DocumentSnapshot) {
         documentSnapshot.reference.delete()
     }
 
-    override fun addTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse) {
+    override suspend fun addTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse) {
         trueFalseQuestionsPath.add(trueFalseQuestion)
     }
 
-    override fun editTrueFalseQuestion(
+    override suspend fun editTrueFalseQuestion(
         trueFalseQuestion: QuestionTrueFalse,
         documentSnapshot: DocumentSnapshot
     ) {

@@ -29,18 +29,18 @@ class FirebaseProverbInteractorImpl @Inject constructor(
         return proverbPath
     }
 
-    override fun addProverbQuestion(proverbQuestion: ProverbQuestion) {
+    override suspend fun addProverbQuestion(proverbQuestion: ProverbQuestion) {
         proverbPath.add(proverbQuestion)
     }
 
-    override fun editProverbQuestion(
+    override suspend fun editProverbQuestion(
         proverbQuestion: ProverbQuestion,
         documentSnapshot: DocumentSnapshot
     ) {
         documentSnapshot.reference.set(proverbQuestion)
     }
 
-    override fun deleteProverbQuestion(documentSnapshot: DocumentSnapshot) {
+    override suspend fun deleteProverbQuestion(documentSnapshot: DocumentSnapshot) {
         documentSnapshot.reference.delete()
     }
 }

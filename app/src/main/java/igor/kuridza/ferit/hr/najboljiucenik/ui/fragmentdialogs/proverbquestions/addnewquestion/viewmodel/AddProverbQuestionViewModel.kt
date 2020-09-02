@@ -4,10 +4,13 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import igor.kuridza.ferit.hr.najboljiucenik.R
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.proverb.FirebaseProverbInteractor
 import igor.kuridza.ferit.hr.najboljiucenik.model.ProverbQuestion
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragmentdialogs.proverbquestions.model.ProverbQuestionFormState
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class AddProverbQuestionViewModel @ViewModelInject constructor(
     private val firebaseProverbInteractor: FirebaseProverbInteractor
@@ -39,7 +42,7 @@ class AddProverbQuestionViewModel @ViewModelInject constructor(
         }
     }
 
-    fun addNewProverbQuestion(question: String, answer: String, letters: String){
+    fun addNewProverbQuestion(question: String, answer: String, letters: String) = viewModelScope.launch(IO){
         val proverbQuestion = ProverbQuestion(question = question, answer = answer, letters = letters)
         firebaseProverbInteractor.addProverbQuestion(proverbQuestion)
     }

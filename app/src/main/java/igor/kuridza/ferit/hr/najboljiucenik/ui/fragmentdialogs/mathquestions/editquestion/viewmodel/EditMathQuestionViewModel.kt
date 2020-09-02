@@ -4,11 +4,15 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.DocumentSnapshot
 import igor.kuridza.ferit.hr.najboljiucenik.R
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.math.FirebaseMathInteractor
 import igor.kuridza.ferit.hr.najboljiucenik.model.MathQuestion
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragmentdialogs.mathquestions.model.MathQuestionFormState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class EditMathQuestionViewModel @ViewModelInject constructor(
     private val firebaseMathInteractor: FirebaseMathInteractor
@@ -31,7 +35,7 @@ class EditMathQuestionViewModel @ViewModelInject constructor(
         }
     }
 
-    fun editMathQuestion(question: String, answer: String, categoryGame: String, documentSnapshot: DocumentSnapshot){
+    fun editMathQuestion(question: String, answer: String, categoryGame: String, documentSnapshot: DocumentSnapshot) = viewModelScope.launch(IO){
         val mathQuestion = MathQuestion(question = question, answer = answer, categoryGame = categoryGame)
         firebaseMathInteractor.editMathQuestion(mathQuestion, documentSnapshot)
     }

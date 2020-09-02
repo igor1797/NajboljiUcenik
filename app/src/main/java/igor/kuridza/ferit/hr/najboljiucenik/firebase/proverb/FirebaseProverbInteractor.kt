@@ -7,7 +7,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.model.ProverbQuestion
 interface FirebaseProverbInteractor {
     suspend fun getProverbQuestions()
     fun getProverbFirebasePath(): CollectionReference
-    fun deleteProverbQuestion(documentSnapshot: DocumentSnapshot)
-    fun addProverbQuestion(proverbQuestion: ProverbQuestion)
-    fun editProverbQuestion(proverbQuestion: ProverbQuestion, documentSnapshot: DocumentSnapshot)
+    suspend fun deleteProverbQuestion(documentSnapshot: DocumentSnapshot)
+    suspend fun addProverbQuestion(proverbQuestion: ProverbQuestion)
+    suspend fun editProverbQuestion(proverbQuestion: ProverbQuestion, documentSnapshot: DocumentSnapshot)
 }

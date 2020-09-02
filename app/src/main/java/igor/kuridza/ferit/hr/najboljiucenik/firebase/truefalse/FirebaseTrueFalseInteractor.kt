@@ -7,7 +7,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.model.QuestionTrueFalse
 interface FirebaseTrueFalseInteractor {
     fun getFirestorePath(): CollectionReference
     suspend fun getTrueFalseQuestions()
-    fun deleteTrueFalseQuestion(documentSnapshot: DocumentSnapshot)
-    fun addTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse)
-    fun editTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse, documentSnapshot: DocumentSnapshot)
+    suspend fun deleteTrueFalseQuestion(documentSnapshot: DocumentSnapshot)
+    suspend fun addTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse)
+    suspend fun editTrueFalseQuestion(trueFalseQuestion: QuestionTrueFalse, documentSnapshot: DocumentSnapshot)
 }

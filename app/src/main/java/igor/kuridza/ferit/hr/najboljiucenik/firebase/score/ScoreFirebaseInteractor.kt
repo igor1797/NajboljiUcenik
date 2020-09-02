@@ -6,5 +6,5 @@ import igor.kuridza.ferit.hr.najboljiucenik.model.PlayerScore
 
 interface ScoreFirebaseInteractor {
     fun getScoreQueryForCategory(categoryType: String): Query
-    fun savePlayerScore(playerScore: PlayerScore)
+    suspend fun savePlayerScore(playerScore: PlayerScore)
 }

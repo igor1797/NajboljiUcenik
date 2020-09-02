@@ -15,7 +15,7 @@ class ScoreFirebaseInteractorImpl: BaseFirebaseInteractor(), ScoreFirebaseIntera
             .orderBy("score", Query.Direction.DESCENDING)
     }
 
-    override fun savePlayerScore(playerScore: PlayerScore) {
+    override suspend fun savePlayerScore(playerScore: PlayerScore) {
         playerScorePath.add(playerScore)
     }
 }

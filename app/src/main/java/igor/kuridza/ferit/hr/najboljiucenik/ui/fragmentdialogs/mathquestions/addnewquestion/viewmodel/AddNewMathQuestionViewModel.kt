@@ -4,10 +4,13 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import igor.kuridza.ferit.hr.najboljiucenik.R
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.math.FirebaseMathInteractor
 import igor.kuridza.ferit.hr.najboljiucenik.model.MathQuestion
 import igor.kuridza.ferit.hr.najboljiucenik.ui.fragmentdialogs.mathquestions.model.MathQuestionFormState
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
 
 class AddNewMathQuestionViewModel @ViewModelInject constructor(
     private val firebaseMathInteractor: FirebaseMathInteractor
@@ -30,7 +33,7 @@ class AddNewMathQuestionViewModel @ViewModelInject constructor(
         }
     }
 
-    fun addNewMathQuestion(question: String, answer: String, categoryGame: String){
+    fun addNewMathQuestion(question: String, answer: String, categoryGame: String) = viewModelScope.launch(IO){
         val mathQuestion = MathQuestion(question = question, answer = answer, categoryGame = categoryGame)
         firebaseMathInteractor.addMathQuestion(mathQuestion)
     }

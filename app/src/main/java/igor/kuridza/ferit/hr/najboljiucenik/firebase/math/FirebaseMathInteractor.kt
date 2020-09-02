@@ -8,7 +8,7 @@ import igor.kuridza.ferit.hr.najboljiucenik.model.MathQuestion
 interface FirebaseMathInteractor {
     suspend fun getMathQuestions()
     fun getFirestorePath(): CollectionReference
-    fun deleteMathQuestion(documentSnapshot: DocumentSnapshot)
-    fun addMathQuestion(mathQuestion: MathQuestion)
-    fun editMathQuestion(mathQuestion: MathQuestion, documentSnapshot: DocumentSnapshot)
+    suspend fun deleteMathQuestion(documentSnapshot: DocumentSnapshot)
+    suspend fun addMathQuestion(mathQuestion: MathQuestion)
+    suspend fun editMathQuestion(mathQuestion: MathQuestion, documentSnapshot: DocumentSnapshot)
 }

@@ -7,10 +7,8 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class NajboljiUcenikApp : Application() {
     companion object {
-        lateinit var instance: NajboljiUcenikApp
+        lateinit var instance: Context
             private set
-
-        fun getAppContext(): Context = instance.applicationContext
     }
 
     override fun onCreate() {

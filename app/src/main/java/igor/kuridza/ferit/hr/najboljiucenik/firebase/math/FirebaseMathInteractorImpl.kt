@@ -1,7 +1,5 @@
 package igor.kuridza.ferit.hr.najboljiucenik.firebase.math
 
-import android.util.Log
-import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QueryDocumentSnapshot
@@ -33,15 +31,15 @@ class FirebaseMathInteractorImpl @Inject constructor(
     }
 
 
-    override fun addMathQuestion(mathQuestion: MathQuestion){
+    override suspend fun addMathQuestion(mathQuestion: MathQuestion){
         mathQuestionsPath.add(mathQuestion)
     }
 
-    override fun deleteMathQuestion(documentSnapshot: DocumentSnapshot) {
+    override suspend fun deleteMathQuestion(documentSnapshot: DocumentSnapshot) {
         documentSnapshot.reference.delete()
     }
 
-    override fun editMathQuestion(mathQuestion: MathQuestion, documentSnapshot: DocumentSnapshot) {
+    override suspend fun editMathQuestion(mathQuestion: MathQuestion, documentSnapshot: DocumentSnapshot) {
         documentSnapshot.reference.set(mathQuestion)
     }
 
