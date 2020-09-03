@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="700dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_margin="64dp"
+    android:padding="@dimen/paddingLarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/newMathQestionHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/HeadingTextView"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/addingNewMathQuestionText"/>
+
+    <EditText
+        android:id="@+id/newMathQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/questionText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_marginStart="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newMathAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/answerText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_marginStart="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"
+        style="@style/LargeText"
+        />
+
+    <Spinner
+        android:id="@+id/mathCategoryTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginStart="@dimen/marginLarge"/>
+
+    <Button
+        android:id="@+id/btnAddMathQuestion"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTopLarge"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        style="@style/LargeText"
+        android:enabled="false"
+        android:text="@string/saveQuestionText"/>
+</LinearLayout>

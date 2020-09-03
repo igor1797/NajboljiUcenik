@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="64dp"
+    android:padding="@dimen/paddingLarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/newMathQuestionHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/HeadingTextView"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/editMathQestionText"/>
+
+    <EditText
+        android:id="@+id/newMathQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newMathQestionHintText"
+        style="@style/LargeText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newMathAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/newMathAnswerHintText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <Spinner
+        android:id="@+id/editMathCategoryTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"/>
+
+    <Button
+        android:id="@+id/btnSaveChangesForMathQuestion"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_gravity="center"
+        style="@style/LargeText"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:text="@string/saveChangesButtonText"/>
+
+</LinearLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="64dp"
+    android:padding="@dimen/paddingLarge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/editProverbQuestionHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/HeadingTextView"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/editProverbTextHeading"/>
+
+    <EditText
+        android:id="@+id/newProverbQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/questionText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newProverbAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/answerText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:inputType="text"
+        tools:ignore="Autofill"/>
+
+    <EditText
+        android:id="@+id/newProverbLetters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lettersForAnswerText"
+        android:layout_marginBottom="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:inputType="text"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/btnEditProverbQuestion"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        style="@style/LargeText"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:layout_gravity="center"
+        android:text="@string/saveChangesButtonText"/>
+</LinearLayout>

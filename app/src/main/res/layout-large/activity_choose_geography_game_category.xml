@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activities.choosesubject.ChooseSubjectActivity">
+
+    <ImageView
+        android:id="@+id/downEye"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_down_eye"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/upEye"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_up_eye"
+        android:transitionName="upEyeTransition"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+
+   <androidx.cardview.widget.CardView
+        android:id="@+id/flags"
+        android:layout_width="600dp"
+        android:layout_height="250dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@id/trueFalse"
+        app:layout_constraintTop_toTopOf="@id/upEye"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flagsText"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="8dp"/>
+
+            <ImageView
+                android:id="@+id/flagsCategorySingle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_single" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/trueFalse"
+        android:layout_width="600dp"
+        android:layout_height="250dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/flags"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/scoreIcon">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trueFalseText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trueFalseText"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/trueFalseSingle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_single"
+                app:layout_constraintTop_toBottomOf="@id/trueFalseText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/trueFalseDual"
+                />
+
+            <ImageView
+                android:id="@+id/trueFalseDual"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toEndOf="@id/trueFalseSingle"
+                app:layout_constraintTop_toTopOf="@id/trueFalseSingle"
+                app:layout_constraintBottom_toBottomOf="@id/trueFalseSingle"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_dual">
+            </ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/scoreIcon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/ic_score_trophy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/downEye"
+        app:layout_constraintTop_toBottomOf="@id/trueFalse"
+        >
+    </ImageView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

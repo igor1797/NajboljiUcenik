@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="igor.kuridza.ferit.hr.najboljiucenik.ui.activities.proverb.viewmodel.ProverbViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activities.proverb.view.ProverbGameActivity"
+        android:layout_margin="64dp">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorPrimary"
+            style="@style/QuestionLargeText"
+            android:text="@{viewmodel.currentQuestion.question}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/countdown"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:text="@{viewmodel.countDown.toString()}"
+            app:countDownTextColor="@{viewmodel.countDown}"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/ic_timerbackground"
+            app:layout_constraintTop_toBottomOf="@+id/question"
+            app:layout_constraintBottom_toBottomOf="@id/question"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/countdown"
+            app:layout_constraintEnd_toEndOf="@id/question"
+            app:layout_constraintStart_toStartOf="@id/question"
+            android:max="@{100}"
+            android:numberOfQuestion="@{10}"
+            android:progressTint="@color/colorGreen"
+            app:progressScaled="@{viewmodel.currentNumberOfQuestion}"
+            tools:progressBackgroundTint="@android:color/darker_gray">
+        </ProgressBar>
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="450dp"
+            android:layout_height="70dp"
+            android:text="@{viewmodel.answer}"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginEnd="50dp"
+            android:layout_marginStart="50dp"
+            android:textColor="@color/colorBlack"
+            android:background="@drawable/ic_answerbackgroud"
+            app:layout_constraintTop_toBottomOf="@id/question"
+            app:layout_constraintBottom_toTopOf="@id/downButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/downButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/b7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(6)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(6))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(7)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(7))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b9"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(8)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(8))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b10"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(9)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(9))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b11"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(10)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(10))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b12"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:visibility="@{viewmodel.answer.length()}"
+                android:onClick="@{()->viewmodel.eraseLetter()}"
+                android:background="@drawable/ic_erase"
+                >
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintBottom_toTopOf="@id/downButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/b1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(0)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(0))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(1)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(1))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(2)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(2))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(3)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(3))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="8dp"
+                app:visibility="@{viewmodel.letters.charAt(4)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(4))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+
+            <Button
+                android:id="@+id/b6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:visibility="@{viewmodel.letters.charAt(5)}"
+                android:text="@{String.valueOf(viewmodel.currentQuestion.letters.charAt(5))}"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:background="@drawable/ic_letterbackgroud"
+                android:textSize="40sp"
+                >
+            </Button>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

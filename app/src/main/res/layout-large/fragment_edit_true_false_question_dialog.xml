@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/paddingLarge"
+    android:layout_margin="64dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/newTrueFalseQuestionHeading"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/HeadingTextView"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:text="@string/editTrueFalseQuestionHeaderText"/>
+
+    <EditText
+        android:id="@+id/editTrueFalseQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/questionText"
+        android:inputType="text"
+        style="@style/LargeText"
+        android:layout_marginBottom="@dimen/marginLarge" />
+
+    <Spinner
+        android:id="@+id/newTrueFalseAnswerSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        />
+
+    <Spinner
+        android:id="@+id/trueFalseCategoryTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"/>
+
+    <Button
+        android:id="@+id/btnEditTrueFalseQuestion"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginLarge"
+        android:layout_marginBottom="@dimen/marginLarge"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        style="@style/LargeText"
+        android:enabled="false"
+        android:text="@string/saveChangesButtonText"/>
+</LinearLayout>
