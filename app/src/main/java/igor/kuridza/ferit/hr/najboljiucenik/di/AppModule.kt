@@ -1,6 +1,8 @@
 package igor.kuridza.ferit.hr.najboljiucenik.di
 
 import android.content.Context
+import android.content.SharedPreferences
+import androidx.core.view.ViewCompat
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
@@ -8,6 +10,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import igor.kuridza.ferit.hr.najboljiucenik.common.DB_NAME
+import igor.kuridza.ferit.hr.najboljiucenik.common.PREFS_NAME
 import igor.kuridza.ferit.hr.najboljiucenik.database.*
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.geography.FirebaseFlagInteractor
 import igor.kuridza.ferit.hr.najboljiucenik.firebase.geography.FirebaseFlagInteractorImpl
@@ -27,6 +30,8 @@ import igor.kuridza.ferit.hr.najboljiucenik.persistance.proverb.ProverbRepositor
 import igor.kuridza.ferit.hr.najboljiucenik.persistance.proverb.ProverbRepositoryImpl
 import igor.kuridza.ferit.hr.najboljiucenik.persistance.truefalse.TrueFalseQuestionRepository
 import igor.kuridza.ferit.hr.najboljiucenik.persistance.truefalse.TrueFalseQuestionRepositoryImpl
+import igor.kuridza.ferit.hr.najboljiucenik.prefs.SharedPrefsHelper
+import igor.kuridza.ferit.hr.najboljiucenik.prefs.SharedPrefsHelperImpl
 import javax.inject.Singleton
 
 @Module
@@ -99,4 +104,14 @@ object AppModule {
     @Provides
     fun provideFirebaseScoreInteractor(): ScoreFirebaseInteractor =
         ScoreFirebaseInteractorImpl()
+
+    @Singleton
+    @Provides
+    fun providePreferences(@ApplicationContext appContext: Context) =
+        appContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+    @Singleton
+    @Provides
+    fun provideSharedPreferencesHelper(sharedPrefs: SharedPreferences): SharedPrefsHelper =
+        SharedPrefsHelperImpl(sharedPrefs)
 }

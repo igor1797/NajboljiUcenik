@@ -1,6 +1,8 @@
 package igor.kuridza.ferit.hr.najboljiucenik.common
 
 const val DB_NAME = "NajboljiUcenikDB"
+const val PREFS_NAME = "NajboljiUcenikPref"
+const val PREFS_TIME_KEY = "PrefsTime"
 //dialogs tags
 const val NEW_MATH_QUESTION_TAG = "NEW_MATH_QUESTION"
 const val EDIT_MATH_QUESTION_TAG = "EDIT_MATH_QUESTION"

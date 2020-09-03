@@ -25,7 +25,7 @@ class MainActivity : BaseActivity(){
     override fun getLayoutResourceId() = R.layout.activity_main
 
     override fun setUpUi() {
-        mainViewModel.getQuestions()
+        mainViewModel.checkData()
         setAdminIconOnClickListener()
         setPlayIconOnClickListener()
         animatePlayButton()
